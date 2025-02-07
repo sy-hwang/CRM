@@ -8,7 +8,7 @@ config:
 # model related
     models:
         config: imagedream/configs/sd_v2_base_ipmv_chin8_zero_snr.yaml
-        resume: release_models/ImageDream/sd-v2.1-base-4view-ipmv.pt
+        resume: release_models/sd-v2.1-base-4view-ipmv.pt
         resume_unet: null
 
 # eval related

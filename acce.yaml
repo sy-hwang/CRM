@@ -7,4 +7,5 @@ deepspeed_config:
   zero_stage: 2
 distributed_type: DEEPSPEED
 mixed_precision: fp16
-num_processes: 8
+num_processes: 1
+gpu_ids: "5"

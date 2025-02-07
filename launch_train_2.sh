@@ -32,13 +32,14 @@ echo $accelerate_args
 export CUDA_VISIBLE_DEVICES=5
 
 # train stage 1
-CUDA_VISIBLE_DEVICES=5 accelerate launch $accelerate_args train.py --config configs/nf7_v3_SNR_rd_size_stroke_train.yaml \
-    config.batch_size=1 \
-    config.eval_interval=100 \
-    config.max_step=1000
+# CUDA_VISIBLE_DEVICES=5 accelerate launch $accelerate_args train.py --config configs/nf7_v3_SNR_rd_size_stroke_train.yaml \
+#     config.batch_size=1 \
+#     config.eval_interval=100 \
+#     config.max_step=1000
 
 
 # train stage 2
-# accelerate launch $accelerate_args train_stage2.py --config configs/stage2-v2-snr_train.yaml \
-#     config.batch_size=1 \
-#     config.eval_interval=100
+CUDA_VISIBLE_DEVICES=5 accelerate launch $accelerate_args train_stage2.py --config configs/stage2-v2-snr_train.yaml \
+     config.batch_size=1 \
+     config.eval_interval=100 \
+     config.max_step=1000
