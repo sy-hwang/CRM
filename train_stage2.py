@@ -172,7 +172,7 @@ def train(config, unk):
         else:
             raise NotImplementedError
         
-        with torch.no_grad(), accelerator.autocast("cuda"):
+        with torch.no_grad(), accelerator.autocast():
             ip_embed = model.clip_model.encode_image_with_transformer(item["clip_cond"])
             ip_ = ip_embed.repeat_interleave(num_frames, dim=0)
             

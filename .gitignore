@@ -153,3 +153,6 @@ dmypy.json
 cython_debug/
 
 out/
+
+train_logs/
+release_models/
