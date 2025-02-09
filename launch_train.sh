@@ -35,7 +35,8 @@ export CUDA_VISIBLE_DEVICES=5
 CUDA_VISIBLE_DEVICES=5 accelerate launch $accelerate_args train.py --config configs/nf7_v3_SNR_rd_size_stroke_train.yaml \
     config.batch_size=1 \
     config.eval_interval=100 \
-    config.max_step=1000
+    config.max_step=10000 \
+    config.save_interval=1000
 
 
 # train stage 2

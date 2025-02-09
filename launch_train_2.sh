@@ -29,7 +29,7 @@ accelerate_args="--config_file acce.yaml --num_machines $WORLD_SIZE \
                  --main_process_ip $ADDR"
 echo $accelerate_args
 
-export CUDA_VISIBLE_DEVICES=5
+export CUDA_VISIBLE_DEVICES=6
 
 # train stage 1
 # CUDA_VISIBLE_DEVICES=5 accelerate launch $accelerate_args train.py --config configs/nf7_v3_SNR_rd_size_stroke_train.yaml \
@@ -39,7 +39,8 @@ export CUDA_VISIBLE_DEVICES=5
 
 
 # train stage 2
-CUDA_VISIBLE_DEVICES=5 accelerate launch $accelerate_args train_stage2.py --config configs/stage2-v2-snr_train.yaml \
+CUDA_VISIBLE_DEVICES=6 accelerate launch $accelerate_args train_stage2.py --config configs/stage2-v2-snr_train.yaml \
      config.batch_size=1 \
      config.eval_interval=100 \
-     config.max_step=1000
+     config.max_step=100000 \
+     config.save_interval=5000
